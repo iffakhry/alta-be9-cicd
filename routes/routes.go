@@ -11,6 +11,7 @@ func New(presenter factory.Presenter) *echo.Echo {
 	e := echo.New()
 
 	e.GET("/hello", presenter.UserPresenter.GetAll)
+	e.GET("/guest", presenter.BookPresenter.GetAll)
 
 	// e.GET("/users", presenter.UserPresenter.GetAll, middlewares.JWTMiddleware())
 	e.GET("/users", presenter.UserPresenter.GetAll)
